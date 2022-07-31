@@ -1,0 +1,15 @@
+
+sudo dnf install -y kernel-devel-$(uname -r) kernel-headers
+git clone https://github.com/mkubecek/vmware-host-modules.git
+
+cd vmware-host-modules
+
+git checkout workstation-16.2.3
+
+#for updates do; git checkout #workstation-"your-vmware-version" and proceed steps
+
+make
+
+sudo make install
+
+sudo /etc/init.d/vmware start
